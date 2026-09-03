@@ -1,0 +1,135 @@
+##Contract Language
+
+{Contract Date}
+
+Dear {Borrower Name},
+
+This letter confirms your loan of the following BDI Equipment:
+
+{insert of items here, with names + quantities + replacement value. List should refer to the "Contract Name" field in the DS_Lab_Inventory csv file. ONLY if there is a drone included in the list, should you include the dimensions and weight. Dimensions are in inches and weight is in grams}
+
+Your loan period is approved for {Period of loan}. {If the form indicates the person will be traveling outside of Massachusetts, write "You have permission to transport the item(s) to {{location, other}}"}. You have received instructions by BDI about best practices for use and transport (if applicable) of the equipment. {If the form indicates the person will be traveling outside of Massachusetts, write "If taking public transportation, we highly recommend traveling with the device in your carry-on luggage"}.
+
+{{ONLY If the "Contract Category" indicates a drone is included in the loan, please also include this language}} I have obtained all necessary licenses and permits and insurance for my project as per the drone laws in {insert the location of the loan}.
+
+{{ONLY if the "Names of additional individuals" field is populated, include the following}} I acknowledge the following individuals will use the drone: {Name(s) of additional users ...}.
+
+Brandeis Design and Innovation is not liable for any damages incurred during this loan period, including if the drone is operated by another person.
+
+By signing this letter, you agree to pay Brandeis Design and Innovation to replace or repair damaged or missing parts. BDI considers all loans as "kits", so this policy applies to small included parts like lens caps, cords, spare propellers, SD cards, etc. Brandeis Design and Innovation reserves the right to determine whether replacement or repair is necessary. The estimated replacement value of your loan is {total sum of "replacement value" field in DS_Lab_Inventory csv).
+
+{{ONLY include the following paragraph if the loan triggers Department Chair Approval -- see the "Conditional Rules" section below for triggers}} Department Chair Certification: {Borrower Name} has discussed this loan with me. As department chair, I certify that {Borrower Name} either has sufficient funds to insure replacement or repair of the equipment. The department is able to replace or repair the equipment if necessary, and I have discussed these options with {Borrower Name}.
+
+{{Borrower signature block -- render as plain horizontal LINES, not filled boxes. Each line has a small caption underneath. Four fillable fields arranged in two rows:
+   Row 1: ____________________ (Borrower Signature)        ____________________ (Printed Name)
+   Row 2: ____________________ (Borrower Department)       ____________________ (Date Signed)
+   The fields should be empty when the PDF is generated -- the borrower fills them in themselves.}}
+
+{{ONLY if Department Chair Approval was triggered, include a second signature block titled "DEPARTMENT CHAIR APPROVAL", also rendered as lines (not boxes), with three empty fillable fields:
+   Row 1: ____________________________________________________________________________ (Chair Name + Department)
+   Row 2: ____________________ (Signature of Chair)        ____________________ (Date)}}
+
+Best,
+{ORG signer name}
+{ORG signer title}
+{ORG signer org}
+
+BDI Full Time Staff acknowledge this contract on {Contract Date}.
+
+{{NO signature image is stamped into the contract. The closing above is typed
+text only. See Conditional Rules rule 7.}}
+
+{Contract Creator, written as "First Last" -- flip the dropdown's "Last, First" order when writing it into the contract} created this contract on {Contract Date}.
+
+
+##Form Questions
+
+0. DS Lab swipe access. Asked on its own GATE SCREEN before the form is shown
+   at all -- see Conditional Rules rule 8. "Does this person have swipe access
+   to the DS Lab?" Yes / No.
+
+1. Borrower Name
+2. Borrower Role
+	- undergraduate student
+	- graduate student
+	- faculty
+	- staff
+3. Contract Date (automatically filled in based on when the form is created).
+3. Borrower Department
+3. Period of loan (date range).
+4. Primary location(s). This is a drop down with a fill-in option:
+	- Brandeis campus
+	- Other (fill this in)
+5. Item(s) of loan AND how many of each. The list should pull from the "Contract Name" field.
+6. Name(s) of additional individuals using the equipment (if applicable).
+6. Contract Creator. Create an alphabetized list using the names on this page as a dropdown {https://www.brandeis.edu/library/design-innovation/people/index.html}. List should be last, first.  Exclude Ifigenia. Add name "Gianna Crisha Saludo".
+   NOTE: Although the dropdown shows names in "Last, First" order (for easy alphabetical scanning by student workers), the script must flip the order to "First Last" when writing the Contract Creator's name into the final contract footer.
+
+
+##Conditional Rules
+
+The contract generator must apply the following conditional rules at PDF-generation time:
+
+1. DRONE DIMENSIONS / WEIGHT
+   If any selected item is in the drone category, include its dimensions (inches) and weight (grams) on its line in the equipment list. Non-drone items omit these.
+   The borrower frequently needs the weight value to apply for insurance, so it is important that every commercial drone (the DJI fleet) prints with weight.
+   EXCEPTION: Custom-built drones (currently CineKing 4K Micro Indoor, Cinewhoop, DIY Racing/Freestyle, and any future item in the inventory whose Weight in grams field is blank) print with dimensions only -- no weight line. This is intentional; we do not have authoritative weight values for custom builds. The script must omit the weight portion whenever the weightGrams field is absent on an inventory item.
+
+2. OUT-OF-MASSACHUSETTS TRAVEL
+   If the primary location is "Other" and the text does not contain "MA", "Massachusetts", or "Waltham", add (a) "You have permission to transport the item(s) to {location, other}" and (b) "If taking public transportation, we highly recommend traveling with the device in your carry-on luggage" to the loan-period paragraph.
+
+3. DRONE CLAUSES
+   If the loan includes a drone, append three sentences after the loan-period paragraph:
+     - "I have obtained all necessary licenses and permits and insurance for my project as per the drone laws in {location of the loan}."
+     - (only if the "Names of additional individuals" field is populated) "I acknowledge the following individuals will use the drone: {names}."
+     - "Brandeis Design and Innovation is not liable for any damages incurred during this loan period, including if the drone is operated by another person."
+
+4. DEPARTMENT CHAIR APPROVAL
+   The Department Chair Certification paragraph and the Chair signature block must appear when EITHER of these conditions is true:
+     (a) The loan includes the Artec scanner (or any other item flagged "requires chair approval" in the inventory configuration).
+     (b) The Borrower Role is "Undergraduate student" or "Graduate student" AND the total replacement value of the selected items (quantity x replacement value, summed across all items) is at or above $1,000.
+   The threshold for rule (b) is configurable in the script as STUDENT_LOAN_THRESHOLD; the current value is $1,000.
+
+5. SIGNATURE BLOCK APPEARANCE
+   Both the borrower signature block and the (conditional) department-chair signature block must render as thin horizontal LINES with small captions beneath each line -- NOT as filled boxes, gray rectangles, or large pre-filled blocks of text. The fields stay empty when the PDF is generated; the borrower (and chair, when applicable) fill them in directly in their PDF viewer.
+
+6. CONTRACT CREATOR NAME ORDER
+   The Contract Creator's name appears in the form/dropdown as "Last, First" for ease of alphabetical lookup. When the script writes the creator's name into the contract footer ("{Contract Creator} created this contract on {Contract Date}."), it must flip the order to "First Last". Names with middle initials should preserve them in the middle position (e.g., "Susmann, Natalie M." becomes "Natalie M. Susmann"; "Saludo, Gianna Crisha" becomes "Gianna Crisha Saludo").
+
+
+7. NO AUTO-PLACED LENDER SIGNATURE
+   The contract must NOT stamp an image of anyone's handwritten signature into
+   the PDF. An earlier version embedded a signature JPEG in the page and drew it
+   above the typed closing; that was removed because the page is intended to be
+   hosted as a public web page, and a downloadable signature image is a forgery
+   risk for whoever it belongs to.
+   What the end of the contract carries instead:
+     (a) the typed closing -- "Best," followed by the ORG signer name, title,
+         and organisation;
+     (b) the line "BDI Full Time Staff acknowledge this contract on
+         {Contract Date}."
+   The borrower signature block (and the chair block when triggered) is
+   unaffected -- those stay as empty lines for people to sign by hand, per
+   rule 5. If a countersignature is ever required, it is added by hand or by the
+   signer's own PDF tool after generation, never baked into the template.
+
+
+8. DS LAB SWIPE ACCESS GATE
+   The generator opens on a gate screen, not on the form. It asks "Does this
+   person have swipe access to the DS Lab?" with Yes / No buttons, and the rest
+   of the form is not shown until it is answered:
+     (a) "Yes" reveals the form and enables contract generation.
+     (b) "No" keeps the form hidden and shows the warning: "Borrowers must have
+         swipe access to the DS Lab. Please see https://makerlab.fyi/moodle to
+         complete the training."
+     (c) Unanswered (the initial state) also keeps the form hidden.
+   Blocking is enforced three ways: the form is hidden, the Generate Contract
+   PDF button is disabled, and the submit handler refuses and returns the user
+   to the gate screen. Never rely on the hidden form or disabled button alone.
+   Re-answering is non-destructive by design. A "Change the DS Lab access
+   answer" link at the bottom of the form returns to the gate screen, and
+   answering "Yes" again brings back a part-filled form untouched -- a student
+   worker who mis-clicks "No" must not lose their work. Reset Form clears
+   everything and returns to the gate.
+   The answer is NOT printed on the contract. Every generated contract implies
+   "Yes" by construction, so printing it would add nothing.

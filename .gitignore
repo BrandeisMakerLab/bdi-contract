@@ -1,0 +1,19 @@
+# No PDFs are ever tracked in this repository.
+#
+# Generated contracts hold borrower personal information: name, department,
+# equipment loaned, and replacement values. Signed contracts live in the BDI
+# staff Google Drive folder linked in the README. The _sample_*_preview.pdf
+# files in this folder are real generated output, so they are ignored too --
+# they stay on disk as local reference but are never committed.
+*.pdf
+Signed/
+signed/
+
+# Google Drive shortcut stubs and OS clutter
+*.gdoc
+*.gsheet
+*.gslides
+desktop.ini
+~$*
+.DS_Store
+Thumbs.db
