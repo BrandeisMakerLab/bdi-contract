@@ -13,6 +13,10 @@ Signed contracts are **not** stored in this repository, and neither is any
 generated PDF. They contain borrower personal information and are kept in a BDI
 staff Google Drive folder:
 
+[makerlab.fyi/signed-contracts](https://makerlab.fyi/signed-contracts) — the
+short address staff are pointed at, and the one the generator displays after
+each download. It resolves to this BDI staff Google Drive folder:
+
 [Signed equipment loan contracts (BDI staff only)](https://drive.google.com/drive/folders/1LFolPr3qnAy-fRi3dKAJMmpNst7dcd5K?usp=drive_link)
 
 Access is managed through Google Drive permissions. If you need access, ask a BDI
@@ -92,8 +96,13 @@ select your own name under **contract creator**.
 **Step 6.** Click **Generate Contract PDF**. The file downloads as
 `BDI_EquipmentLoan_<BorrowerName>_<ContractDate>.pdf`.
 
-**Step 7.** Collect signatures, then file the signed PDF in the Google Drive
-folder linked above.
+**Step 7.** Collect signatures, then file the signed PDF at
+[makerlab.fyi/signed-contracts](https://makerlab.fyi/signed-contracts) — the
+address the page itself shows after a contract downloads.
+
+The download confirmation carries that instruction and stays on screen until the
+next contract is generated or the form is reset. It deliberately does not time
+out, because it is an action item rather than a status message.
 
 The page loads its PDF library (`pdf-lib`) from a CDN, so an internet connection
 is required to generate a contract.

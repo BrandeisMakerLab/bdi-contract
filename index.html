@@ -59,6 +59,9 @@
   .btn-secondary:hover { background:#eef4fb; }
   .error-msg { color:var(--error); font-size:13px; margin-top:4px; }
   .success-banner { background:#e8f6ed; border:1px solid var(--success); color:#1d6f3d; padding:12px 16px; border-radius:6px; margin-bottom:16px; display:none; }
+  .success-banner .done { font-weight:600; }
+  .success-banner .next-step { margin-top:7px; font-size:13px; line-height:1.45; }
+  .success-banner .next-step a { color:#1d6f3d; font-weight:600; }
   .help-text { font-size:13px; color:var(--muted); margin-bottom:14px; }
   .location-other { margin-top:8px; display:none; }
   /* --- Equipment browser: search, category filter, grouping, selection recap --- */
@@ -95,7 +98,11 @@
 </header>
 
 <div class="container">
-  <div id="successBanner" class="success-banner">Contract PDF generated and downloaded.</div>
+  <div id="successBanner" class="success-banner">
+    <div class="done">Contract PDF generated and downloaded.</div>
+    <div class="next-step">Please save a signed PDF of this contract to
+      <a href="https://makerlab.fyi/signed-contracts" target="_blank" rel="noopener noreferrer">makerlab.fyi/signed-contracts</a>.</div>
+  </div>
   <div id="gateScreen" class="card gate-screen">
     <h2>DS Lab Access</h2>
     <p class="gate-lead">Confirm the borrower's lab access before preparing a loan contract.</p>
@@ -752,8 +759,10 @@ $("contractForm").addEventListener("submit", async (e) => {
     a.href = url; a.download = `BDI_EquipmentLoan_${safe}_${data.contractDate}.pdf`;
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     URL.revokeObjectURL(url);
+    // Left on screen deliberately: the banner now carries a filing instruction,
+    // so it must not time out before the student worker has acted on it. It
+    // clears on the next generate or on Reset Form.
     $("successBanner").style.display = "block";
-    setTimeout(() => $("successBanner").style.display = "none", 5000);
     window.scrollTo({ top: 0, behavior: "smooth" });
   } catch (err) { console.error(err); alert("Something went wrong generating the PDF. Open the browser console for details."); }
   finally { btn.disabled = false; btn.textContent = "Generate Contract PDF"; }
@@ -765,6 +774,7 @@ $("resetBtn").addEventListener("click", () => {
   $("contractDate").value = todayISO; $("loanStart").value = todayISO;
   $("locationOtherWrap").style.display = "none";
   document.querySelectorAll(".equip-row.selected").forEach(el => el.classList.remove("selected"));
+  $("successBanner").style.display = "none";
   clearEquipmentFilters();
   updateSelectionSummary();
   updateConditionalFields();
