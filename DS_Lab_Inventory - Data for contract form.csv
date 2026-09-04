@@ -1,40 +1,39 @@
 ID,BDI Name,Contract Name,Contract Category,Size in inches,Weight in grams,Replacement Value
-0063,BDI_RevopointPop3Plus (DSLab)_0063 ,Revopoint Pop 3 Plus Scanner,3D Scanner,,,$619
-0064,BDI_RevopointMiraco_0064,Revopoint Miraco Scanner,3D Scanner,,,"$2,199"
-0065,BDI_RevopointInspire_0065,Revopoint Inspire Scanner,3D Scanner,,,$549
-0066,BDI_RevopointMini_0066,Revopoint Mini Scanner,3D Scanner,,,$829
-0067,BDI_BadElf_0067.1-.10,Bad Elf Handheld GPS,GPS,,,$500
-0068,BDI_CrealityOtter_0068,Creality Otter Scanner,3D Scanner,,,$899
-0071,BDI_Anker,Anker Charging Block,Charging,,,$170
-0072,BDI_DJIPhantom3Prof,DJI Phantom 3 Professional,Drone,13.8 x 13.8,"1,280.00",$350
-0073,BDI_DJIPhantom4Pro,DJI Phantom 4 Pro,Drone,13.8 x 13.8,"1,388.00",$600
-0074,BDI_DJIPhantom4RTK,DJI Phantom 4 RTK,Drone,13.8 x 13.8,"1,391.00","$3,500"
-0075,BDI_DJIMavic1,DJI Mavic Pro (Mavic 1),Drone,12.7 x 9.5,734.00,$400
-0076,BDI_DJIMavic3,DJI Mavic 3,Drone,13.7 x 11.1,895.00,"$1,500"
-0077,BDI_DJIInspire1,DJI Inspire 1,Drone,17.8 x 17.3,"2,935.00",$800
-0078,BDI_DJISpark,DJI Spark,Drone,5.6 x 5.6,300.00,$200
-0079,BDI_DJITello,DJI Tello,Drone,3.8 x 3.6,80.00,$100
-0080,BDI_CineKing4KMicro,CineKing 4K Micro Indoor,Drone,3.9 x 3.9,,$150
-0081,BDI_DIYRacingFreestyle,"DIY Racing/Freestyle (5"" build)",Drone,8.0 x 8.0,,$400
-0082,BDI_Cinewhoop3inch,"Cinewhoop (3"" build)",Drone,5.5 x 5.5,,$350
-0083,BDI_DJIMini4Pro,DJI Mini 4 Pro,Drone,5.8 x 3.7,249.00,$800
-0084,BDI_Artec,Artec,3D Scanner,,,"$20,000"
+0063,BDI_RevopointPop3Plus (DSLab)_0063 ,Revopoint Pop 3 Plus Scanner,3D Scanner,,,$619 
+0064,BDI_RevopointMiraco_0064,Revopoint Miraco Scanner,3D Scanner,,,"$2,199 "
+0065,BDI_RevopointInspire_0065,Revopoint Inspire Scanner,3D Scanner,,,$549 
+0066,BDI_RevopointMini_0066,Revopoint Mini Scanner,3D Scanner,,,$829 
+0067,BDI_BadElf_0067.1-.10,Bad Elf Handheld GPS,GPS,,,$500 
+0068,BDI_CrealityOtter_0068,Creality Otter Scanner,3D Scanner,,,$899 
+0071,BDI_Anker,Anker Charging Block,Charging,,,$170 
+0072,BDI_DJIPhantom3Prof,DJI Phantom 3 Professional,Drone,13.8 x 13.8,"1,280.00",$350 
+0073,BDI_DJIPhantom4Pro,DJI Phantom 4 Pro,Drone,13.8 x 13.8,"1,388.00",$600 
+0074,BDI_DJIPhantom4RTK,DJI Phantom 4 RTK,Drone,13.8 x 13.8,"1,391.00","$3,500 "
+0075,BDI_DJIMavic1,DJI Mavic Pro (Mavic 1),Drone,12.7 x 9.5,734,$400 
+0076,BDI_DJIMavic3,DJI Mavic 3,Drone,13.7 x 11.1,895,"$1,500 "
+0077,BDI_DJIInspire1,DJI Inspire 1,Drone,17.8 x 17.3,"2,935.00",$800 
+0078,BDI_DJISpark,DJI Spark,Drone,5.6 x 5.6,300,$200 
+0079,BDI_DJITello,DJI Tello,Drone,3.8 x 3.6,80,$100 
+0080,BDI_CineKing4KMicro,CineKing 4K Micro Indoor,Drone,3.9 x 3.9,,$150 
+0081,BDI_DIYRacingFreestyle,"DIY Racing/Freestyle (5"" build)",Drone,8.0 x 8.0,,$400 
+0082,BDI_Cinewhoop3inch,"Cinewhoop (3"" build)",Drone,5.5 x 5.5,,$350 
+0083,BDI_DJIMini4Pro,DJI Mini 4 Pro,Drone,5.8 x 3.7,249,$800 
+0084,BDI_Artec,Artec,3D Scanner,,,"$20,000 "
 85,BDI_Autel,Autel EVO Max 4T XE Thermal Drone,Drone,22 x 25.6 x 5.78,1600,"8,999.00"
-86,BDI_DJIIan,DJI Mini 3 Pro (Ian's),Drone,5.8 x 3.5 x 2.4,249,700.00
-0001,BDI_OculusRift_0001,Oculus Rift,VR,,,$500
-0002,BDI_HTCViveCosmosElite_0002.1 - 0002.2,HTC Vive Cosmos Elite,VR,,,$800
-0004,BDI_HTCVive(original)_0004.1 - 0004.3,HTC Vive (original),VR,,,$800
-0005,BDI_Vive_Deluxe_Headstrap_0005.1-0005.3,Vive Deluxe Headstrap,VR,,,$50
-0006,BDI_HTCViveBaseStations_0006.1-0006.2,HTC Vive Base Stations,VR,,,$130
-0007,BDI_HTCViveFocusPlus_0007.1,HTC Vive Focus Plus ,VR,,,$500
-0008,BDI_OculusRiftS_008,Oculus Rift ,VR,,,$500
-0009,BDI_OculusGo_0009.1-0009.2,Oculus Go ,VR,,,$300
-0010,BDI_OculusQuest1_0010.1-0010.3,Oculus Quest 1,VR,,,$500
-0011,BDI_OculusDevKit2_0011,Oculus Dev Kit 2,VR,,,$150
-0012,BDI_MicrosoftHololens1_00012.1 - 0012.2,Microsoft Hololens 1,VR,,,"$1,200"
-0013,BDI_OSVRHackerDevKit_0013.1 - 0013.2,OSVR Hacker Dev Kit,VR,,,$400
-0014,BDI_DJIGoggles1080p_0014.1,DJI Goggles 1080p,VR,,,$500
-0027,BDI_CanonEOSRebelSL3_0027.1-0027.7,Canon EOS Rebel SL3,Camera Kit,,,$500
-0028,BDI_CanonEOSRebelT4i_0028,Canon EOS Rebel T4i,Camera Kit,,,$500
-0029,BDI_CanonEOSRebelT3_0029,Canon EOS Rebel T3,Camera Kit,,,$500
-0067,BDI_BadElf_0067.1-.10,Bad Elf,GPS,,,$500
+86,BDI_DJIIan,DJI Mini 3 Pro (Ian's),Drone,5.8 x 3.5 x 2.4,249,700
+0001,BDI_OculusRift_0001,Oculus Rift,VR,,,$500 
+0002,BDI_HTCViveCosmosElite_0002.1 - 0002.2,HTC Vive Cosmos Elite,VR,,,$800 
+0004,BDI_HTCVive(original)_0004.1 - 0004.3,HTC Vive (original),VR,,,$800 
+0005,BDI_Vive_Deluxe_Headstrap_0005.1-0005.3,Vive Deluxe Headstrap,VR,,,$50 
+0006,BDI_HTCViveBaseStations_0006.1-0006.2,HTC Vive Base Stations,VR,,,$130 
+0007,BDI_HTCViveFocusPlus_0007.1,HTC Vive Focus Plus ,VR,,,$500 
+0008,BDI_OculusRiftS_008,Oculus Rift S,VR,,,$500 
+0009,BDI_OculusGo_0009.1-0009.2,Oculus Go ,VR,,,$300 
+0010,BDI_OculusQuest1_0010.1-0010.3,Oculus Quest 1,VR,,,$500 
+0011,BDI_OculusDevKit2_0011,Oculus Dev Kit 2,VR,,,$150 
+0012,BDI_MicrosoftHololens1_00012.1 - 0012.2,Microsoft Hololens 1,VR,,,"$1,200 "
+0013,BDI_OSVRHackerDevKit_0013.1 - 0013.2,OSVR Hacker Dev Kit,VR,,,$400 
+0014,BDI_DJIGoggles1080p_0014.1,DJI Goggles 1080p,VR,,,$500 
+0027,BDI_CanonEOSRebelSL3_0027.1-0027.7,Canon EOS Rebel SL3,Camera Kit,,,$500 
+0028,BDI_CanonEOSRebelT4i_0028,Canon EOS Rebel T4i,Camera Kit,,,$500 
+0029,BDI_CanonEOSRebelT3_0029,Canon EOS Rebel T3,Camera Kit,,,$500 

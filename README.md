@@ -203,25 +203,26 @@ Also in that script block:
 - **Chair approval flag** (`requiresChairApproval`) — set on the Artec scanner.
   Add it to any future item that should always require a chair signature.
 
-## Known data issues in the inventory sheet
+## Sheet hygiene
 
-Two things in the current sheet are worth fixing at the source. Neither blocks
-the generator, and neither is patched in code — the sheet stays the single source
-of truth.
+`tools/sync-inventory.py` warns about the two data problems that actually bite:
+a duplicated asset ID, and two items sharing a printed contract name. Both were
+present earlier and are now resolved — the duplicate `0067` row was removed from
+the sheet, and asset `0008` was renamed from "Oculus Rift" to "Oculus Rift S" to
+distinguish it from `0001`. A clean run prints no warnings, so treat any warning
+as something to fix in the sheet rather than in code.
 
-- **Asset 0067 appears twice**, once as "Bad Elf Handheld GPS" and once as
-  "Bad Elf". The import keeps the first name it sees and skips the duplicate, so
-  the item currently prints as "Bad Elf Handheld GPS". Delete whichever row is
-  wrong.
+Two quirks the import absorbs silently, so they need no action:
 
-- **Assets 0001 and 0008 both print as "Oculus Rift".** The BDI Name for 0008 is
-  `BDI_OculusRiftS_008`, so it is almost certainly an Oculus Rift **S** with a
-  truncated contract name. Because that name prints on a signed contract it has
-  not been changed here. The form shows the asset number next to each name so
-  staff can still tell them apart, but two identical entries invite mistakes.
+- IDs `85` and `86` arrive without leading zeros; they are re-padded to `0085`
+  and `0086` to match the rest of the catalog.
 
-Also note that IDs `85` and `86` lost their leading zeros in the sheet; the
-import re-pads them to `0085` and `0086` to match the rest of the catalog.
+- Trailing spaces in names and dollar amounts are trimmed, and values like
+  `"8,999.00"` or a missing `$` parse correctly.
+
+Contract names print on a signed legal document, so the script never invents or
+alters one — it only reports collisions. Renaming an item is a deliberate edit to
+the sheet.
 
 ## Related documents
 
