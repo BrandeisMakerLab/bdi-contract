@@ -35,7 +35,8 @@ staff member rather than requesting it through this repository.
 - `DS_Lab_Inventory - Data for contract form.csv` — inventory source data: asset
   ID, contract name, **contract category**, dimensions, weight in grams, and
   replacement value for each of the 38 loanable items. The category column drives
-  both the drone rules and the type filter in the form.
+  both the drone rules and the type filter in the form. This file is not the
+  original — see **Where the inventory data comes from** below.
 
 The BDI letterhead source document is deliberately **not** in this repository.
 It embeds a scanned handwritten signature, which must never be committed to a
@@ -164,13 +165,39 @@ statement of each; in brief:
   alphabetical scanning, but the contract footer must print "First Last", with
   middle initials preserved in the middle.
 
+## Where the inventory data comes from
+
+The inventory lives in the **internal DS Lab inventory Google Sheet**, which is
+the system of record for the lab's equipment. That workbook has a **tab dedicated
+to the contract generator**, holding just the columns this tool needs in the
+order it expects them.
+
+The chain is:
+
+**DS Lab inventory Google Sheet** (contract-generator tab)
+→ exported as an **Excel file**
+→ saved into this repository as `DS_Lab_Inventory - Data for contract form.csv`
+→ `tools/sync-inventory.py` rebuilds the catalog inside `index.html`
+
+Two consequences worth keeping in mind:
+
+- **Fix data in the Google Sheet, not in the CSV or the HTML.** Anything corrected
+  further down the chain is silently undone by the next export. The CSV in this
+  repository is a snapshot, not the master copy.
+
+- **The sheet is internal and stays internal.** Only the exported columns reach
+  this public repository, so keep anything not meant to be public — donor names,
+  purchase records, serial numbers, storage locations — out of the
+  contract-generator tab.
+
 ## Maintaining the lists
 
 The equipment catalog exists in **two places**: the CSV in this repository, and
 the `const INVENTORY` array near the top of the `<script>` block in the HTML. The
 running page only reads the array, so editing the sheet alone changes nothing.
 
-Rather than hand-editing the array, export the sheet over the CSV and run:
+Rather than hand-editing the array, export the contract-generator tab from the
+Google Sheet, save it over the CSV in this repository, and run:
 
     python tools/sync-inventory.py
 

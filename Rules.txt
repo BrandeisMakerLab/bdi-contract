@@ -42,6 +42,19 @@ text only. See Conditional Rules rule 7.}}
 {Contract Creator, written as "First Last" -- flip the dropdown's "Last, First" order when writing it into the contract} created this contract on {Contract Date}.
 
 
+##Inventory Data Source
+
+The equipment list originates in the internal DS Lab inventory Google Sheet,
+which has a tab dedicated to the contract generator. That tab is exported as an
+Excel file and saved into the repository as
+"DS_Lab_Inventory - Data for contract form.csv", and tools/sync-inventory.py
+rebuilds the catalog inside index.html from it.
+
+Corrections belong in the Google Sheet. Edits made to the CSV or to the HTML
+catalog are undone by the next export. Keep anything not meant to be public out
+of the contract-generator tab -- the exported columns land in a public repository.
+
+
 ##Form Questions
 
 0. DS Lab swipe access. Asked on its own GATE SCREEN before the form is shown
