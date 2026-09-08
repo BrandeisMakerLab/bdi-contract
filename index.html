@@ -51,6 +51,8 @@
   .conditional-block .block-title { font-weight:600; font-size:13px; color:#7a5c0a; margin-bottom:10px; }
   .acknowledgement { display:flex; align-items:flex-start; margin-bottom:8px; font-size:13px; cursor:pointer; }
   .acknowledgement input { margin-right:8px; margin-top:4px; }
+  .filing-reminder { color:var(--error); font-size:13.5px; font-weight:600; line-height:1.45; margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+  .filing-reminder a { color:var(--error); }
   .actions { display:flex; justify-content:space-between; align-items:center; }
   button { background:var(--bdi-blue); color:white; border:none; padding:12px 24px; font-size:15px; font-weight:600; border-radius:6px; cursor:pointer; transition:background 0.15s; }
   button:hover { background:var(--bdi-blue-dark); }
@@ -197,6 +199,8 @@
     </div>
 
     <div class="card">
+      <p class="filing-reminder">Please save a signed PDF of this contract to
+        <a href="https://makerlab.fyi/signed-contracts" target="_blank" rel="noopener noreferrer">makerlab.fyi/signed-contracts</a>.</p>
       <div class="actions">
         <button type="button" id="resetBtn" class="btn-secondary">Reset Form</button>
         <button type="submit" id="generateBtn">Generate Contract PDF</button>
