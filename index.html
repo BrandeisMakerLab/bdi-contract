@@ -53,6 +53,7 @@
   .acknowledgement input { margin-right:8px; margin-top:4px; }
   .filing-reminder { color:var(--error); font-size:clamp(20px, 5vw, 27px); font-weight:700; line-height:1.3; margin:0 0 18px; padding-bottom:18px; border-bottom:1px solid var(--border); }
   .filing-reminder a { color:var(--error); }
+  .filing-reminder.standalone { margin:0; padding-bottom:0; border-bottom:none; }
   .actions { display:flex; justify-content:space-between; align-items:center; }
   button { background:var(--bdi-blue); color:white; border:none; padding:12px 24px; font-size:15px; font-weight:600; border-radius:6px; cursor:pointer; transition:background 0.15s; }
   button:hover { background:var(--bdi-blue-dark); }
@@ -119,6 +120,11 @@
   <input type="hidden" id="swipeAccess" value="">
 
   <form id="contractForm" class="is-hidden" novalidate>
+    <div class="card">
+      <p class="filing-reminder standalone">Please save a signed PDF of this contract to
+        <a href="https://makerlab.fyi/signed-contracts" target="_blank" rel="noopener noreferrer">makerlab.fyi/signed-contracts</a>.</p>
+    </div>
+
     <div class="card">
       <h2>Borrower Information</h2>
       <div class="row">

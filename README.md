@@ -101,9 +101,10 @@ select your own name under **contract creator**.
 [makerlab.fyi/signed-contracts](https://makerlab.fyi/signed-contracts) — the
 address the page itself shows after a contract downloads.
 
-The instruction appears twice on purpose. It sits in red above the **Generate
-Contract PDF** button, so it is read before the contract is made, and it repeats
-in the download confirmation afterwards. The confirmation stays on screen until
+The instruction appears three times on purpose: in red at the top of the form,
+in red again above the **Generate Contract PDF** button, and once more in the
+download confirmation afterwards. The first two are large (27px) so they read as
+a warning rather than fine print. The confirmation stays on screen until
 the next contract is generated or the form is reset — it deliberately does not
 time out, because it is an action item rather than a status message.
 
